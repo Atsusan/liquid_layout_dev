@@ -4,3 +4,7 @@
 @use "project";
 @use "utility";
 @use "extra";
+
+@use "./global" as g;
+
+// 特殊な追記など

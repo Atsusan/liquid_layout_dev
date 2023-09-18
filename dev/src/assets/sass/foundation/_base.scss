@@ -1,18 +1,28 @@
-@use "../global" as global;
+@use "sass:math";
+@use "../global" as g;
+
+html {
+    @media screen and (min-width: g.$sp-width) and (max-width: g.$inner-width) {
+        font-size: math.div(10, g.$pc-inner) * 100vw;
+    }
+    @media screen and (max-width: #{g.$sp-inner - 1px}) {
+        font-size: math.div(10, g.$sp-inner) * 100vw;
+    }
+}
 
 body {
-  color: global.$text-color;
-  font-family: global.$ff-base;
-  font-size: global.$fz-base;
-  font-weight: global.$fw-base;
-  line-height: global.$lh-base;
+    color: g.$text-color;
+    font-family: g.$ff-base;
+    font-size: g.$fz-base;
+    font-weight: g.$fw-base;
+    line-height: g.$lh-base;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
-  color: inherit;
+    color: inherit;
 }
